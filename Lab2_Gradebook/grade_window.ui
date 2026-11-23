@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>GradeWindow</class>
+ <widget class="QMainWindow" name="GradeWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>650</width>
+    <height>500</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Class Gradebook</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="mainLayout">
+    <property name="spacing">
+     <number>10</number>
+    </property>
+    <property name="leftMargin">
+     <number>18</number>
+    </property>
+    <property name="topMargin">
+     <number>16</number>
+    </property>
+    <property name="rightMargin">
+     <number>18</number>
+    </property>
+    <property name="bottomMargin">
+     <number>16</number>
+    </property>
+    <item>
+     <widget class="QLabel" name="entryHeading">
+      <property name="font">
+       <font>
+        <pointsize>16</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>Class scores</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <layout class="QFormLayout" name="entryLayout">
+      <item row="0" column="0">
+       <widget class="QLabel" name="countLabel">
+        <property name="text">
+         <string>Number of students</string>
+        </property>
+        <property name="buddy">
+         <cstring>countInput</cstring>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QLineEdit" name="countInput">
+        <property name="placeholderText">
+         <string>e.g. 3</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QLabel" name="scoresLabel">
+        <property name="text">
+         <string>Scores (0–100)</string>
+        </property>
+        <property name="buddy">
+         <cstring>scoresInput</cstring>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="QLineEdit" name="scoresInput">
+        <property name="placeholderText">
+         <string>Separate scores with spaces, e.g. 55 40 70</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item alignment="Qt::AlignLeft">
+     <widget class="QPushButton" name="calculateButton">
+      <property name="text">
+       <string>Calculate and save</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLabel" name="statusLabel">
+      <property name="text">
+       <string>Enter the student count and scores to begin.</string>
+      </property>
+      <property name="textFormat">
+       <enum>Qt::PlainText</enum>
+      </property>
+      <property name="wordWrap">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QGroupBox" name="resultsGroup">
+      <property name="title">
+       <string>Last saved class</string>
+      </property>
+      <layout class="QVBoxLayout" name="resultsLayout">
+       <item>
+        <widget class="QTableWidget" name="resultsTable">
+         <property name="editTriggers">
+          <set>QAbstractItemView::NoEditTriggers</set>
+         </property>
+         <attribute name="verticalHeaderVisible">
+          <bool>false</bool>
+         </attribute>
+         <column>
+          <property name="text">
+           <string>Student</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Score</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Grade</string>
+          </property>
+         </column>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="summaryLabel">
+         <property name="text">
+          <string>No grades yet.</string>
+         </property>
+         <property name="wordWrap">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <tabstops>
+  <tabstop>countInput</tabstop>
+  <tabstop>scoresInput</tabstop>
+  <tabstop>calculateButton</tabstop>
+  <tabstop>resultsTable</tabstop>
+ </tabstops>
+ <resources/>
+ <connections/>
+</ui>
